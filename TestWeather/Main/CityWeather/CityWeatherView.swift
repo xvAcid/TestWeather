@@ -18,8 +18,9 @@ class CityWeatherView: UIViewController {
     private var temperatureView: TemperaturesView? = nil
     var weatherCity: String = ""
     
-//     Проверил, так делать нельзя, так как view на самом деле не переменая с отложенной инициализацией,
-//     а не явно извлеченный опционал, и пока view не проиницилизировали, то оно равно nil
+//    Проверил, так делать нельзя, так как view на самом деле не переменая с отложенной инициализацией,
+//    а не явно извлеченный опционал, и пока view не проиницилизировали, то оно равно nil до первой инициализации
+//    и при первом обращении к нему, мы получим креш
 //    required init?(coder aDecoder: NSCoder) {
 //        super.init(coder: aDecoder)
 //        if view != nil {
