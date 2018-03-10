@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TemperatureTableViewCell" rowHeight="70" id="Ol6-Wc-y9v" customClass="TemperatureTableViewCell" customModule="TestWeather" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ol6-Wc-y9v" id="KYy-I0-a3K">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date: 25.03.2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shJ-b5-D9o">
+                        <rect key="frame" x="16" y="9" width="200" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="CHr-Cz-ahW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 13:00-25:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyP-8R-NYo">
+                        <rect key="frame" x="16" y="38" width="200" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZd-vy-8m5">
+                        <rect key="frame" x="224" y="9" width="135" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="135" id="LVM-N0-yL1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vyP-8R-NYo" firstAttribute="bottom" secondItem="KYy-I0-a3K" secondAttribute="bottomMargin" id="CZ9-ho-eRQ"/>
+                    <constraint firstItem="gZd-vy-8m5" firstAttribute="leading" secondItem="shJ-b5-D9o" secondAttribute="trailing" constant="8" symbolic="YES" id="CaI-jX-np9"/>
+                    <constraint firstItem="shJ-b5-D9o" firstAttribute="leading" secondItem="KYy-I0-a3K" secondAttribute="leadingMargin" id="FHi-Mw-8fc"/>
+                    <constraint firstItem="gZd-vy-8m5" firstAttribute="trailing" secondItem="KYy-I0-a3K" secondAttribute="trailingMargin" id="Guh-n1-Yhe"/>
+                    <constraint firstItem="vyP-8R-NYo" firstAttribute="bottom" secondItem="gZd-vy-8m5" secondAttribute="bottom" id="Hlf-iV-GE4"/>
+                    <constraint firstItem="vyP-8R-NYo" firstAttribute="top" secondItem="shJ-b5-D9o" secondAttribute="bottom" constant="8" symbolic="YES" id="JG3-gy-ogs"/>
+                    <constraint firstItem="gZd-vy-8m5" firstAttribute="leading" secondItem="vyP-8R-NYo" secondAttribute="trailing" constant="8" symbolic="YES" id="Mb8-bB-UnW"/>
+                    <constraint firstItem="shJ-b5-D9o" firstAttribute="top" secondItem="gZd-vy-8m5" secondAttribute="top" id="OhW-Bc-q45"/>
+                    <constraint firstItem="shJ-b5-D9o" firstAttribute="leading" secondItem="vyP-8R-NYo" secondAttribute="leading" id="VlT-Oa-8Bh"/>
+                    <constraint firstItem="gZd-vy-8m5" firstAttribute="centerY" secondItem="KYy-I0-a3K" secondAttribute="centerY" id="vPM-CS-I9e"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="shJ-b5-D9o" id="tJE-Nv-wiH"/>
+                <outlet property="temperatureLabel" destination="gZd-vy-8m5" id="Kfi-du-rJg"/>
+                <outlet property="timeLabel" destination="vyP-8R-NYo" id="jxQ-Tz-3LN"/>
+            </connections>
+            <point key="canvasLocation" x="-13.5" y="-34"/>
+        </tableViewCell>
+    </objects>
+</document>
