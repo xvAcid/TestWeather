@@ -31,8 +31,16 @@ class CityWeatherView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = CityWeatherViewModel(city: weatherCity)
-        viewModel.cityName.asObservable().bind(to: cityLabel.rx.text).disposed(by: disposeBag)
-        viewModel.temperature.asObservable().map { $0 < 0 ? "\($0)" : "+\($0)" }.bind(to: temperatureLabel.rx.text).disposed(by: disposeBag)
+        viewModel.cityName.asObservable()
+            .observeOn(MainScheduler.instance)
+            .bind(to: cityLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.temperature.asObservable()
+            .observeOn(MainScheduler.instance)
+            .map { $0 < 0 ? "\($0)" : "+\($0)" }
+            .bind(to: temperatureLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 
     override func didReceiveMemoryWarning() {

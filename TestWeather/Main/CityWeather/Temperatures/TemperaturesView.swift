@@ -20,9 +20,12 @@ class TemperaturesView: UIViewController {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "TemperatureTableViewCell", bundle: nil), forCellReuseIdentifier: "TemperatureTableViewCell")
         viewModel = TemperatureViewModel(city: cityName)
-        viewModel.dayTemperatures.asObservable().subscribe(onNext: { temperatures in
-            self.tableView.reloadData()
-        }).disposed(by: disposeBag)
+        
+        viewModel.dayTemperatures.asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { temperatures in
+                self.tableView.reloadData()
+            }).disposed(by: disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
