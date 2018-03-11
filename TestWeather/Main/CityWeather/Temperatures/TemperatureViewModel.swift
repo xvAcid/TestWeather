@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class TemperatureViewModel: NSObject {
-    private let weatherService = WeatherXMLService()
+    private let weatherService: WeatherAPI = WeatherXMLService()
     private let disposeBag = DisposeBag()
     public var dayTemperatures = Variable<[DayTemperatureInfo]>([])
     

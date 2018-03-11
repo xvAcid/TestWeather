@@ -10,12 +10,13 @@ import RxCocoa
 import RxSwift
 
 class CityWeatherViewModel: NSObject {
-    private let weatherService = WeatherXMLService()
+    private let weatherService: WeatherAPI = WeatherXMLService()
     let cityName = Variable<String>("Loading...")
     let temperature = Variable<Int>(0)
 
     init(city: String) {
         super.init()
+        
         let _ = weatherService.requestWeather(city: city).subscribe(onNext: { weather in
             self.cityName.value = weather.city
             self.temperature.value = weather.temperature

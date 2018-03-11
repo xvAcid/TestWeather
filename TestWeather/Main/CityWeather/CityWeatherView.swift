@@ -42,7 +42,7 @@ class CityWeatherView: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TableViewlSegue" {
             temperatureView = segue.destination as? TemperaturesView
-            temperatureView!.cityName = weatherCity
+            temperatureView?.cityName = weatherCity
         }
     }
 }

@@ -8,6 +8,7 @@
 import RxSwift
 import RxCocoa
 
-protocol WeatherAPIProtocol: class {
+protocol WeatherAPI: class {
     func requestWeather(city: String) -> Observable<WeatherCity>
+    func requestWeatherByDays(city: String) -> Observable<[DayTemperatureInfo]>
 }

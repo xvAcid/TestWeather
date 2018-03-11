@@ -68,7 +68,7 @@ class WeatherXMLService: NSObject {
 }
 
 // - MARK: WeatherAPIProtocol
-extension WeatherXMLService: WeatherAPIProtocol {
+extension WeatherXMLService: WeatherAPI {
     func requestWeather(city: String) -> Observable<WeatherCity> {
         return Observable.create({ [weak self] observer -> Disposable in
             let disposable = Disposables.create()
